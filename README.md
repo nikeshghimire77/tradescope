@@ -1,69 +1,149 @@
-# React + TypeScript + Vite
+# 📊 Portfolio P&L Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Real-time stock portfolio tracking with FIFO cost basis and comprehensive analytics**
 
-Currently, two official plugins are available:
+A modern, responsive web application for tracking stock portfolio performance with advanced features like FIFO cost basis calculations, real-time market data integration, and detailed trade analytics.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Dashboard Preview](docs/images/dashboard-preview.png)
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **📈 Real-time Portfolio Tracking** - Live market data integration
+- **🎯 FIFO Cost Basis** - Accurate profit/loss calculations
+- **📊 Trade Analytics** - Detailed buy/sell pair analysis
+- **💾 CSV Import** - Support for broker export files
+- **📱 Responsive Design** - Works on desktop and mobile
+- **🎨 Modern UI** - Dark theme with beautiful gradients
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Quick Start
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd portfolio-pnl-dashboard
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Project Structure
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+portfolio-pnl-dashboard/
+├── src/
+│   ├── components/          # React components
+│   ├── utils/              # Business logic
+│   ├── types/              # TypeScript definitions
+│   └── assets/             # Static assets
+├── docs/                   # Documentation
+├── public/                 # Public assets
+└── package.json
+```
+
+## 🔧 Core Features
+
+### CSV Import & Processing
+- Supports broker CSV exports (Robinhood, TD Ameritrade, etc.)
+- Automatic transaction type detection
+- FIFO cost basis calculation
+- Real-time data validation
+
+### Portfolio Analytics
+- **Realized P&L** - Profit/loss from closed positions
+- **Unrealized P&L** - Current position performance
+- **Trade Pairs** - Buy/sell matching with holding periods
+- **Position Tracking** - Current holdings with average cost
+
+### Market Data Integration
+- Real-time stock prices via Alpha Vantage API
+- Automatic price updates
+- Historical performance tracking
+
+## 📊 Supported Data Formats
+
+The dashboard processes CSV files with the following structure:
+
+```csv
+"Activity Date","Process Date","Settle Date","Instrument","Description","Trans Code","Quantity","Price","Amount"
+"7/24/2025","7/24/2025","7/25/2025","DNUT","Krispy Kreme","Sell","111","$4.28","$475.33"
+```
+
+### Transaction Types
+- **BUY/SELL** - Stock trades
+- **CDIV** - Dividend payments
+- **AFEE/GOLD** - Account fees
+- **RTP** - Deposits/withdrawals
+- **SOFF** - Corporate actions
+
+## 🎯 Key Calculations
+
+### FIFO Cost Basis
+- First-in, first-out inventory method
+- Accurate realized P&L calculations
+- Proper tax basis tracking
+
+### Price Calculations
+- **BUY**: `cost_per = (−Amount) / Quantity`
+- **SELL**: `sell_per = Amount / Quantity`
+- Uses Amount as source of truth
+
+### Portfolio Metrics
+- Total invested amount
+- Realized vs unrealized gains/losses
+- Position-specific performance
+- Trade pair analytics
+
+## 🛠️ Technology Stack
+
+- **Frontend**: React 18 + TypeScript
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
+- **Data Processing**: Papa Parse
+- **Market Data**: Alpha Vantage API
+- **Charts**: Custom SVG components
+
+## 📚 Documentation
+
+- [Architecture Overview](docs/architecture.md)
+- [API Reference](docs/api.md)
+- [Data Processing](docs/data-processing.md)
+- [Deployment Guide](docs/deployment.md)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with modern web technologies
+- Inspired by professional trading platforms
+- Designed for accuracy and usability
+
+## 📄 Copyright
+
+© 2025 Nikesh Ghimire. All rights reserved.
+
+This software is provided "as is" without warranty of any kind, either express or implied. The author assumes no responsibility for any damages or losses that may result from the use of this software.
+
+---
+
+**Made with ❤️ for accurate portfolio tracking** 
