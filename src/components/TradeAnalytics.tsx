@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, Area, AreaChart, PieChart, Pie, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart, PieChart, Pie, Cell } from 'recharts';
 import { ArrowUpRight, ArrowDownRight, Calendar, DollarSign, TrendingUp, TrendingDown, BarChart3, PieChart as PieChartIcon, AlertTriangle, Lightbulb, Target, Clock, CheckCircle } from 'lucide-react';
 import type { TradePair, Position } from '../types/trade';
 import { formatCurrency, formatPercent } from '../utils/portfolio';
@@ -568,13 +568,13 @@ export function TradeAnalytics({ tradePairs, positions }: TradeAnalyticsProps) {
                             ) : (
                                 insights.map((insight, index) => (
                                     <div key={index} className={`p-4 rounded-xl border ${insight.type === 'warning'
-                                            ? 'bg-red-500/10 border-red-500/20'
-                                            : 'bg-blue-500/10 border-blue-500/20'
+                                        ? 'bg-red-500/10 border-red-500/20'
+                                        : 'bg-blue-500/10 border-blue-500/20'
                                         }`}>
                                         <div className="flex items-start gap-3">
                                             <div className={`p-2 rounded-lg ${insight.type === 'warning'
-                                                    ? 'bg-red-500/20'
-                                                    : 'bg-blue-500/20'
+                                                ? 'bg-red-500/20'
+                                                : 'bg-blue-500/20'
                                                 }`}>
                                                 <insight.icon className={`h-5 w-5 ${insight.type === 'warning' ? 'text-red-400' : 'text-blue-400'
                                                     }`} />

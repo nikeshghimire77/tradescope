@@ -1,4 +1,4 @@
-import { ArrowUpRight, ArrowDownRight, Target, DollarSign, TrendingUp, TrendingDown } from 'lucide-react';
+import { Target, TrendingUp } from 'lucide-react';
 import type { Position } from '../types/trade';
 import { formatCurrency, formatPercent } from '../utils/portfolio';
 

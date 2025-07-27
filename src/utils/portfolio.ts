@@ -260,7 +260,7 @@ export function calculatePositions(trades: Trade[]): Position[] {
 
     console.log('Processing trades for positions:', sortedTrades.length);
 
-    sortedTrades.forEach((trade, index) => {
+    sortedTrades.forEach((trade) => {
         const symbol = trade.symbol;
 
         if (!positions.has(symbol)) {
