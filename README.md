@@ -1,10 +1,8 @@
-# 📊 Portfolio P&L Dashboard
+# 📊 Tradescope
 
 > **Real-time stock portfolio tracking with FIFO cost basis and comprehensive analytics**
 
 A modern, responsive web application for tracking stock portfolio performance with advanced features like FIFO cost basis calculations, real-time market data integration, and detailed trade analytics.
-
-![Dashboard Preview](docs/images/dashboard-preview.png)
 
 ## ✨ Features
 
@@ -13,7 +11,7 @@ A modern, responsive web application for tracking stock portfolio performance wi
 - **📊 Trade Analytics** - Detailed buy/sell pair analysis
 - **💾 CSV Import** - Support for broker export files
 - **📱 Responsive Design** - Works on desktop and mobile
-- **🎨 Modern UI** - Dark theme with beautiful gradients
+- **🎨 Modern UI** - Beautiful gradients and intuitive design
 
 ## 🚀 Quick Start
 
@@ -26,7 +24,7 @@ A modern, responsive web application for tracking stock portfolio performance wi
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd portfolio-pnl-dashboard
+cd tradescope
 
 # Install dependencies
 npm install
@@ -40,7 +38,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ## 📁 Project Structure
 
 ```
-portfolio-pnl-dashboard/
+tradescope/
 ├── src/
 │   ├── components/          # React components
 │   ├── utils/              # Business logic
